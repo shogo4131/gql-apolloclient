@@ -16,16 +16,18 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
-    "@apollo/client": "^3.7.4",
     "@chakra-ui/icons": "^2.0.16",
     "@chakra-ui/react": "^2.4.9",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
+    "@urql/devtools": "^2.0.3",
     "framer-motion": "^8.4.7",
     "graphql": "^16.6.0",
     "next": "13.1.1",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-hook-form": "^7.42.1",
+    "zod": "^3.20.2"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
