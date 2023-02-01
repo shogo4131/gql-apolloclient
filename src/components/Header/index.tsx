@@ -8,7 +8,7 @@ export const Header: FC = () => {
   return (
     <HStack justifyContent="space-between" height={70} padding={6} bg="gray.100">
       <Box>
-        <Link href="/">ホーム</Link>
+        <Link href="/">GraphQL勉強会 サンプル</Link>
       </Box>
       <Box display="flex">
         <Box marginRight={4}>
