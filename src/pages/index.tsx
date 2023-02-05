@@ -2,13 +2,11 @@ import { Fragment } from 'react';
 
 import type { NextPage } from 'next';
 
-import { useQuery } from '@apollo/client';
-
 import { Layout } from '../components/Layout';
-import { USERS_QUERY, type UsersData } from '../graphql/queries/user.queries';
+import { useUsersQuery } from '../graphql/generated/graphql';
 
 const Home: NextPage = () => {
-  const { data, loading } = useQuery<UsersData>(USERS_QUERY);
+  const { data, loading } = useUsersQuery();
 
   if (loading) return <div>loading...</div>;
 
