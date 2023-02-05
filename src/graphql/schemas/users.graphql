@@ -2,6 +2,5 @@ query Users {
   users {
     id
     name
-    email
   }
 }
