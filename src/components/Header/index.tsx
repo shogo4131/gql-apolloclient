@@ -15,7 +15,7 @@ export const Header: FC = () => {
           <Link href="/">ユーザー一覧</Link>
         </Box>
         <Box>
-          <Link href="/register-user">新規ユーザー登録</Link>
+          <Link href="/create-user">新規ユーザー登録</Link>
         </Box>
       </Box>
     </HStack>
