@@ -133,6 +133,15 @@ export type CreateUserMutation = {
   createUser: { __typename?: 'User'; name: string; email: string };
 };
 
+export type RemoveUserMutationVariables = Exact<{
+  id: Scalars['ID'];
+}>;
+
+export type RemoveUserMutation = {
+  __typename?: 'Mutation';
+  removeUser: { __typename?: 'User'; name: string };
+};
+
 export type UserQueryVariables = Exact<{
   id: Scalars['ID'];
 }>;
@@ -242,6 +251,50 @@ export type CreateUserMutationResult = Apollo.MutationResult<CreateUserMutation>
 export type CreateUserMutationOptions = Apollo.BaseMutationOptions<
   CreateUserMutation,
   CreateUserMutationVariables
+>;
+export const RemoveUserDocument = gql`
+  mutation removeUser($id: ID!) {
+    removeUser(id: $id) {
+      name
+    }
+  }
+`;
+export type RemoveUserMutationFn = Apollo.MutationFunction<
+  RemoveUserMutation,
+  RemoveUserMutationVariables
+>;
+
+/**
+ * __useRemoveUserMutation__
+ *
+ * To run a mutation, you first call `useRemoveUserMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useRemoveUserMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [removeUserMutation, { data, loading, error }] = useRemoveUserMutation({
+ *   variables: {
+ *      id: // value for 'id'
+ *   },
+ * });
+ */
+export function useRemoveUserMutation(
+  baseOptions?: Apollo.MutationHookOptions<RemoveUserMutation, RemoveUserMutationVariables>
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useMutation<RemoveUserMutation, RemoveUserMutationVariables>(
+    RemoveUserDocument,
+    options
+  );
+}
+export type RemoveUserMutationHookResult = ReturnType<typeof useRemoveUserMutation>;
+export type RemoveUserMutationResult = Apollo.MutationResult<RemoveUserMutation>;
+export type RemoveUserMutationOptions = Apollo.BaseMutationOptions<
+  RemoveUserMutation,
+  RemoveUserMutationVariables
 >;
 export const UserDocument = gql`
   query User($id: ID!) {
