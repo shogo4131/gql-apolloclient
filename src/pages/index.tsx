@@ -21,9 +21,9 @@ const Home: NextPage = () => {
       <Heading as="h1" mb={10}>
         ユーザー一覧
       </Heading>
-      {data?.users.map(({ id, name }) => (
+      {data?.users.map(({ id, name }, index) => (
         <HStack key={id} spacing={8} fontSize={20} onClick={() => onClickUserDetailPageHandler(id)}>
-          <Text>{id}</Text>
+          <Text>{index + 1}</Text>
           <Text>{name}</Text>
         </HStack>
       ))}
