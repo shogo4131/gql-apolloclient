@@ -10,16 +10,18 @@ import { useUserQuery, useRemoveUserMutation } from '../graphql/generated/graphq
 const UserDetail: NextPage = () => {
   const { query, push } = useRouter();
 
-  const { data, loading } = useUserQuery({ variables: { id: query.id as string } });
+  const id = Array.isArray(query.id) && query.id ? query.id[0] : query.id ?? '';
+
+  const { data, loading } = useUserQuery({ variables: { id } });
   const [removeUser] = useRemoveUserMutation({
-    variables: { id: query.id as string },
+    variables: { id },
     refetchQueries: ['Users'],
   });
 
-  const onClickRemoveUserHandler = () => {
+  const onClickRemoveUserHandler = async () => {
     if (confirm('本当に削除しますか？')) {
-      removeUser();
-      push('/');
+      await removeUser();
+      await push('/');
     }
   };
 
