@@ -15,10 +15,10 @@ export const Header: FC = () => {
           <Link href="/">ユーザー一覧</Link>
         </Box>
         <Box marginRight={4}>
-          <Link href="/rental-books">貸出書一覧</Link>
+          <Link href="/create-user">新規ユーザー登録</Link>
         </Box>
         <Box>
-          <Link href="/create-user">新規ユーザー登録</Link>
+          <Link href="/rental-books">貸出書一覧</Link>
         </Box>
       </Box>
     </HStack>

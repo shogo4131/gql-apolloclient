@@ -22,7 +22,13 @@ const Home: NextPage = () => {
         ユーザー一覧
       </Heading>
       {data?.users.map(({ id, name }, index) => (
-        <HStack key={id} spacing={8} fontSize={20} onClick={() => onClickUserDetailPageHandler(id)}>
+        <HStack
+          key={id}
+          spacing={8}
+          fontSize={20}
+          cursor="pointer"
+          onClick={() => onClickUserDetailPageHandler(id)}
+        >
           <Text>{index + 1}</Text>
           <Text>{name}</Text>
         </HStack>
