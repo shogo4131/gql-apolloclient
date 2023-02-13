@@ -10,7 +10,7 @@ export const Layout: FC<Props> = ({ children }) => {
   return (
     <>
       <Header />
-      <main>{children}</main>
+      <main style={{ height: 'calc(100vh - 70px)', padding: '40px' }}>{children}</main>
     </>
   );
 };
